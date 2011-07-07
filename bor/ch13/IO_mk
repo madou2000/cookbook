@@ -1,0 +1,21 @@
+charcount=0
+linescount=0
+f=File.new("licence.txt","r")
+while !(f.eof) do
+ c=f.getc()
+if !(c==10)
+putc(c)
+charcount++
+else
+puts "<End oft line nr:#{linescount}."
+linescount++
+end
+end
+	
+	if f.eof then 
+	puts( "<End Of File>" ) 
+end
+
+f.close
+
+puts("This file contains #{linecount} lines and #{charcount} characters." )

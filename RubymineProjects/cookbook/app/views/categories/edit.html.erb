@@ -1,0 +1,42 @@
+<h1>Editing category</h1>
+
+<% form_for(@category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+  Primary Key ID not displayed because it is a protected field.
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @category %> |
+<%= link_to 'Back', categories_path %>
+
+new.html.erb ***
+
+
+<h1>New category</h1>
+
+<% form_for(@category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+  Note, Primary key is not displayed because it is a protected field.
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<p><%= link_to 'Back to categories', categories_path %></p>
+<p><%= link_to 'Back to Recipes List ', recipes_path %></p>

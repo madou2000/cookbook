@@ -1,0 +1,49 @@
+Licence d’utilisation de l’application
+
+
+Attention: En installant et en utilisant un logiciel GesCom vous avez accepté les termes de la licence suivante :  
+Le CLIENT représente la personne (physique ou morale) ayant acquis une licence.  L’APPLICATION désigne le droit d'utilisation 
+du programme GesCom acquis par le CLIENT, pour la version actuelle et pour toute version mise a jour, a moins que cette version 
+mise a jour ne comporte elle-meme un contrat de licence, qui serait alors celui qui s'appliquerait.  
+
+1. Licence    
+ Cette licence d'utilisation est concédée au CLIENT contre le versement d'un prix d'achat.  Cette APPLICATION doit etre utilisée 
+sur une et une seule machine par une et une seule personne a un instant donné. L’ APPLICATION est déclarée utilisée des qu'elle se
+ trouve en "mémoire centrale" (également appelée RAM) d'un ordinateur.  Cette licence n'est transmise qu'apres paiement intégral 
+des droits, tels qu'indiqués au tarif le jour de l'acquisition.    
+
+ 2. Propriété de l’APPLICATION     Ce programme est la propriété de 
+Mamadou KONATE (KonateSoft).
+ Le client a simplement acquis le droit d'utiliser ce l’ APPLICATION.
+
+3. Copie de sauvegarde     
+Le CLIENT est autorisé a effectuer une seule copie de sauvegarde du DVD et/ou du CD composant cette APPLICATION.
+  La duplication de la documentation, en totalité ou en partie, est strictement interdite.    
+
+4. Utilisation  
+Le CLIENT doit utiliser l’ APPLICATION pour l'usage pour lequel elle est vendue. Il est interdit de modifier ou tenter de 
+modifier cette APPLICATION, de désassembler ou tenter de désassembler cette APPLICATION. Il est interdit d'enlever 
+ou de tenter d'enlever les mentions de copyright pouvant apparaître et/ou étant contenues dans l’ APPLICATION. 
+ La location ou le pret de cette APPLICATION est interdit.   
+
+5. Absence de responsabilité
+L’ APPLICATION et la documentation qui l'accompagne sont vendues en l'état, 
+SANS AUCUNE GARANTIE D'AUCUNE SORTE. Mamadou KONATE (KonateSoft).
+ne saurait etre tenu pour responsable pour tout dommage 
+de quelque nature que ce soit, et en particulier en cas de perte ou détérioration des données, en cas de perte financiere,
+ en cas de perte d'exploitation, en cas de divergence des informations contenues dans la documentation avec le 
+comportement de l’ APPLICATION, en cas de comportement de l’ APPLICATION différent de celui attendu.
+
+Acceptation de la licence :  
+Le fait de conserver et d'utiliser cette APPLICATION indique la compréhension et 
+l'acceptation des termes de cette licence.  Ce contrat ne peut pas etre modifié, sauf par un courrier original paraphé de Mamadou KONATE (KonateSoft).
+Tout litige qui pourrait  résulter de ce contrat de licence sera de la compétence 
+exclusive des tribunaux du choix de Mamadou KONATE (KonateSoft).
+
+
+I
+wandered
+lonely
+as
+a
+cloud

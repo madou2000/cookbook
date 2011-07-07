@@ -1,0 +1,34 @@
+L I S E Z  -  M O I
+
+Merci d'avoir choisi GesCom - Gestion Informatique d'un Commerce
+
+Avant de commmencer l'utilisation de l'application veuillez renseigner en premier les donnees permanantes suivantes:
+
+1) Renseigner les informations concernant votre societie  - M E N U   P A R A M E T R E S
+
+2) Filiale: par defaut lors de la creation de la Societe, votre societe est autimatique  cree aussi comme filiale nr 1.
+    Vous pouvez changer toutes les informations sauf son numero qui est attribue automatiquement
+
+3) Client (idem  au point 2) la societe est creee aussi comme son premier client  - M E N U   D O N N E E S
+
+4) Fournisseur (idem au point 2), la societe est creee aussi comme son premier fournseur  - M E N U   D O N N E E S
+
+5) Creer les taux de TVA applicables  (optionnels)  - M E N U   P A R A M E T R E S
+
+6) Creer les unites de mesure applicables exp. kg, ml, l, cm, g, cl etc  (optionnel)   - M E N U   P A R A M E T R E S
+
+7) Creer les frais de logistique (frais de port)  (optionnels)   - M E N U   P A R A M E T R E S
+
+8) Creer un collaborateur (employe)  - M E N U   D O N N E E S
+
+9) Creer la famille des produits   - M E N U   P A R A M E T R E S
+
+10) Creer les prodUITS   - M E N U   D O N N E E S
+
+
+Vous pouvez commencer l'utilisation de l'application apres avoir saisi ces informations.
+
+Support Technique
+KonateSoft
+www.konatesoft.com
+madou2000@gmail.com

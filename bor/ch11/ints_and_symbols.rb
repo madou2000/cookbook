@@ -1,0 +1,21 @@
+# The Book of Ruby - http://www.sapphiresteel.com
+puts( 1.object_id )
+puts( 10.object_id )
+puts( :ten.object_id )
+puts( :ten.object_id )
+puts( :ten.object_id )
+puts( :a.object_id )
+puts
+puts( :A.object_id )
+puts( :i.object_id )
+puts( :a.object_id )
+puts( :a10.object_id )
+puts( :z.object_id )
+puts( :ten.object_id )
+puts( :hello.object_id )
+puts( :ten.object_id )
+puts( :hello.object_id )
+
+puts( 10.object_id )
+puts( 10.object_id )
+puts( 10.object_id )

@@ -1,0 +1,247 @@
+== Third Rails - Rails 3.0 Sample Application
+
+The original Third Rails was created by @josevalim and it is available here:
+
+  http://github.com/josevalim/third_rails
+
+It has very specific goals:
+
+* showcase Rails 3.0 new folder structure
+* demonstrate the usage of custom generators
+
+This application is fully self-contained. In this fork I've done:
+
+* vendorized all needed gems
+* updated the railties files to the latest version
+
+== Gem Bundler
+
+If you want to use the newest gem dependency manager support, you have 
+to install a separate gem called Bundler, from @wycatz, available here: 
+http://github.com/wycats/bundler
+
+  sudo gem install bundler
+
+All the necessary gems are already vendorized under vendor/gems and if
+the gem has executables, they will be at <tt>bin/</tt>, such as the
+'spec', 'rails' commands and others. Check out the next section.
+
+== Using Third Rails
+
+There are 2 ways to use this project: with shared gems, or local gems.
+
+The simple approach right now is to just do this:
+
+  git clone git://github.com/akitaonrails/third_rails.git
+
+You need to have the Rails source project somewhere as well:
+
+  git clone git://github.com/rails/rails.git
+  cd rails
+  git submodule init
+  git submodule update
+
+Now edit the <tt>Gemfile</tt> inside the 'third_rails' project you just
+cloned and change the variable <tt>rails_source_path</tt> in the first
+line to the correct path of your Rails source project. After that you
+can do:
+
+  cd third_rails
+  gem bundle
+
+This will vendorize all needed gems inside the project's <tt>vendor/gems</tt> folder
+so everything works smoothly. You need to install the Bundler gem, see the 
+previous section.
+
+Talking to @josevalim he clarified what would be the easy way to just test
+this app and to create your own test bed. Again, you will need the Rails source project:
+
+  git clone git://github.com/rails/rails.git
+  cd rails
+  git submodule init
+  git submodule update
+  gem bundle
+
+Bundler will create a <tt>vendor/gems</tt> folder inside the Rails source project,
+then you need to edit the <tt>config/boot.rb</tt>, specifically this first line:
+
+  environment = File.expand_path('../../vendor/gems/environment', __FILE__)
+
+Replace the path for the correct path to your gems folder inside the Rails project.
+If you do this for every Rails 3 project, you will reuse the same gems. For example,
+my Rails project is in this path: <tt>~/Sites/rails/rails/vendor/gems/environment</tt>
+
+But there is a caveat: it will override the <tt>Gemfile</tt> in your project. So you
+won't be able to have project specific gems. So this is not good enough for normal
+development, but will do to quickly create a test project.
+
+== Rails 3.0 First Impressions (by @AkitaOnRails)
+
+There are new files available in the structure:
+
+* Gemfile - that's where you configure all the needed gems
+* config.ru - Rails fully supports Rack, and from now on, even script/server
+  bootstraps using Rack
+
+The good old <tt>config/environment.rb</tt> is now lighter and it basically
+depends on a new file called <tt>config/application.rb</tt>. So, whatever you
+used to do in environment.rb you should now to at application.rb
+
+All the old 2.x Rails generators will not work, so Rspec, Cucumber, and any
+other gem that supported generators will have to rewrite them to the new
+style which depends on Thor. In this project you can see how they will look
+like: take a look in <tt>lib/generators</tt> for examples. There you will find
+RSpec and DataMapper custom generators.
+
+If you want to use this project to start your own new Rails 3 project, don't 
+simply copy it. The new <tt>config/application.rb</tt> file declared a new
+class called <tt>ThirdRails</tt>, which is the name of your application, 
+and several other files expect to find this constant. So you need to update
+the following files to the new constant if you change the name of the app:
+
+  config/application.rb
+  config/environment.rb
+  config.ru
+  script/console
+  script/dbconsole
+  script/server
+
+It is well known that the Routes engine received a lot of attention and it
+also sports a refined DSL. Check out <tt>config/routes.rb</tt> as there are
+examples of usage. Basically, they rely on blocks instead of hashes now, so
+the old style would be:
+
+  map.resources :posts, :member => { :first => :get }
+
+And the new style becomes:
+
+  resources :posts do
+    member do
+      get :first
+    end
+  end
+
+Much cleaner if you ask me. Also don't forget the the Controller was also
+heavily revised and now supports @josevalim's Inherited Resources style.
+Check out his plugin to learn it today:
+
+  http://github.com/josevalim/inherited_resources/
+
+Just for now, there seems to be a glitch in the new Routing DSL. If I do
+<tt>map.resources :people</tt> everything works correctly. If I use the
+new <tt>resources :people</tt>, then pluralization gets messed up and I
+end up having routes like <tt>/peoples</tt>. It's probably gonna be 
+fixed before release.
+
+Rails now will bundle other 3rd party gems. It already had tztime for Time
+Zone support, Rack, and now Thor for the generators. Another interesting
+one is "Arel", described as "Relational Algebra for Ruby" or a way to write
+cleaner and more expressive SQL queries in Ruby style. Worth checking out
+its documentation. I didn't peek into ActiveRecord and ActiveModel but I
+bet they are replacing its own internal SQL handling for Arel:
+
+  http://github.com/nkallen/arel/
+
+Rails is highly modularized now. You have the bare bone "Rails Metal" and
+you can even build a small Sinatra-like micro-framework as @wycatz explained:
+
+  http://yehudakatz.com/2009/08/26/how-to-build-sinatra-on-rails-3/
+
+ActiveRecord and ActiveResource have also received a lot of love and the
+result is the extraction of ActiveModel as a separate project so you can build
+Model-like classes that do not rely neither on a database table or web service
+and still have all the validations, filters and other goodies.
+
+If you're a DataMapper, Sequel or other ORM developer, take a look into the
+<tt>ActiveModel::Lint::Tests</tt> module inside the Rails/ActiveModel project.
+They delineate the requirements for you to create a thin adapter layer for your
+ORM so Rails can transparently use it. 
+
+== You want to start a project from scratch
+
+When Rails 3 gets released you can simply do:
+
+  sudo gem install rails
+  rails my_project
+
+But, while it doesn't happen, you need to go straight to the source, so, again:
+
+  git clone git://github.com/rails/rails.git
+  cd rails
+  git submodule init
+  git submodule update
+
+From within the Rails project folder, you can create a new project 
+like this:
+
+  ruby railties/bin/rails /path/to/new/project
+  /path/to/new/project
+
+Now, it is a good time to change your Rails Gemfile content for this:
+
+  rails_source_path = "/Users/akitaonrails/Sites/rails/rails/"
+  
+  gem "rake", ">= 0.8.7"
+  gem "mocha", ">= 0.9.8"
+  
+  gem "rails", "3.0.pre", :path => "#{rails_source_path}railties"
+  %w(activesupport activemodel actionpack actionmailer activerecord activeresource).each do |lib|
+    gem lib, '3.0.pre', :path => "#{rails_source_path}#{lib}"
+  end
+  
+  # AR
+  gem "arel", "0.2.pre", :git => "git://github.com/rails/arel.git"
+  gem "sqlite3-ruby", ">= 1.2.5"
+  
+  # AP
+  gem "rack", "1.0.1", :git => "git://github.com/rails/rack.git"
+
+Again, change the <tt>rails_source_path</tt> to the path of the Rails source
+project you just cloned. Once you do it, you can choose to vendorize these gems 
+into your project like this:
+
+  gem bundle
+
+Do not forget to install the bundler gem first, as I mentioned before.
+This will vendorize the gems inside your own project. If you don't want to duplicate
+your gems all the time, read the 'Using Third Rails' section above to
+understand how to have a shared gems repository within your Rails source project.
+
+If everything goes fine, you should be able to start using the usual
+Rails commands:
+
+  script/generate
+  script/console
+  script/server
+
+This should make you prepared to start learning Rails 3. And if you
+are a Gem or Rails Plugin developer: *NOW* is the time to start
+updating and testing your projects!! Remember: a *lot* has changed
+under the hoods, so if your project rely on *any* monkey-patching
+you must re-test it against Rails 3 because it will most certainly
+break. If your project as generators, learn how to rewrite them.
+
+Cheers
+
+== Extras
+
+There is a custom generator for DataMapper to illustrate how other
+ORMs can also have Rails-like generators. Problem is, up to this
+point it is not yet clear to me how to Wrap DataMapper as an ActiveModel
+object. There will be a clear way to do it, but I have to research
+more how (anyone?)
+
+I've also added a still in development new plugin called Responder, 
+form the Plataforma Tec guys. This is a scaffold generator to create
+thinner controllers using <tt>respond_with</tt> instead of the usual more
+verbose <tt>respond_to</tt> version that is the Rails default.
+
+The included example controller was already generated that way and if you
+want to use this new generator, do this:
+
+  git submodule update --init
+
+== Authors
+
+* José Valim (http://blog.plataformatec.com.br/)
+* Fabio Akita (http://www.akitaonrails.com)

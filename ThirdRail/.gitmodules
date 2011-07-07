@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/responders"]
+	path = vendor/plugins/responders
+	url = git://github.com/plataformatec/responders.git

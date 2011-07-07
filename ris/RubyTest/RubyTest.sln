@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{325B8569-0C7C-4A6A-8AF8-89C3B6BC9E74}") = "RubyTest", "RubyTest\RubyTest.stproj", "{470178C1-5291-4417-9BED-30F5D1CB8EF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{470178C1-5291-4417-9BED-30F5D1CB8EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470178C1-5291-4417-9BED-30F5D1CB8EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470178C1-5291-4417-9BED-30F5D1CB8EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470178C1-5291-4417-9BED-30F5D1CB8EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

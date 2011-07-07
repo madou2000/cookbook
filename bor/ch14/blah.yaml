@@ -1,0 +1,30 @@
+--- !ruby/object:A 
+number: 1
+string: hello world
+--- !ruby/object:A 
+number: 2
+string: hello world
+--- !ruby/object:A 
+number: 3
+string: hello world
+--- !ruby/object:A 
+number: 4
+string: hello world
+--- !ruby/object:A 
+number: 5
+string: hello world
+--- !ruby/object:A 
+number: 6
+string: hello world
+--- !ruby/object:A 
+number: 7
+string: hello world
+--- !ruby/object:A 
+number: 8
+string: hello world
+--- !ruby/object:A 
+number: 9
+string: hello world
+--- !ruby/object:A 
+number: 10
+string: hello world
